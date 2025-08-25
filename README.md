@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDFToolsPro - Free PDF Tools Online</title>
+    
+    <!-- Monetag Verification Code -->
+    <meta name="monetag" content="bb0bd6df87683f59dccce18e8c29f454">
+    
+    <!-- Add PDF-lib library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    
     <style>
         * {
             margin: 0;
@@ -52,6 +59,10 @@
             border-radius: 8px;
             color: #6c757d;
             font-weight: bold;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .ad-sidebar {
@@ -270,18 +281,9 @@
             <div class="tagline">Complete PDF Solutions - Free & Fast</div>
         </header>
 
-        <!-- Top Banner Ad -->
+        <!-- Top Banner Ad - Monetag will place ads here automatically -->
         <div class="ad-banner">
-            <!-- Replace this entire div with your Google AdSense code -->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXXXX"
-                 data-ad-slot="XXXXXXXXXX"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            <!-- End AdSense code -->
+            Monetag Ads Will Appear Here Automatically
         </div>
 
         <div class="main-content">
@@ -330,9 +332,9 @@
                     </div>
                 </div>
 
-                <!-- Middle Banner Ad -->
+                <!-- Middle Banner Ad - Monetag will place ads here automatically -->
                 <div class="ad-banner">
-                    💰 GOOGLE ADSENSE - MIDDLE BANNER AD (728x90 or responsive)
+                    Monetag Ads Will Appear Here Automatically
                 </div>
             </div>
 
@@ -346,9 +348,9 @@
                     <li onclick="openTool('protect')">🛡️ Password Protect</li>
                 </ul>
 
-                <!-- Sidebar Ad 1 -->
+                <!-- Sidebar Ad 1 - Monetag will place ads here automatically -->
                 <div class="ad-sidebar">
-                    📱 GOOGLE ADSENSE<br>SIDEBAR AD<br>(300x250)
+                    Monetag Ads Will Appear Here Automatically
                 </div>
 
                 <h3>Quick Tips</h3>
@@ -359,11 +361,19 @@
                     <li>🔄 Batch processing available</li>
                 </ul>
 
-                <!-- Sidebar Ad 2 -->
+                <!-- Sidebar Ad 2 - Monetag will place ads here automatically -->
                 <div class="ad-sidebar">
-                    🎯 GOOGLE ADSENSE<br>SIDEBAR AD<br>(300x600)
+                    Monetag Ads Will Appear Here Automatically
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Policy Modal -->
+    <div id="policyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePolicyModal()">&times;</span>
+            <div id="policyContent"></div>
         </div>
     </div>
 
@@ -373,9 +383,9 @@
             <span class="close" onclick="closeModal()">&times;</span>
             <h2 id="modalTitle">PDF Tool</h2>
             
-            <!-- Ad in Modal -->
+            <!-- Ad in Modal - Monetag will place ads here automatically -->
             <div class="ad-banner" style="margin: 20px 0;">
-                💎 GOOGLE ADSENSE - IN-MODAL AD (responsive)
+                Monetag Ads Will Appear Here Automatically
             </div>
             
             <input type="file" id="fileInput" class="file-input" multiple accept=".pdf">
@@ -398,26 +408,29 @@
                 </button>
             </div>
             
-            <!-- Another ad after processing area -->
+            <!-- Another ad after processing area - Monetag will place ads here automatically -->
             <div class="ad-banner" style="margin-top: 30px;">
-                🏆 GOOGLE ADSENSE - BOTTOM MODAL AD (responsive)
+                Monetag Ads Will Appear Here Automatically
             </div>
         </div>
     </div>
 
     <footer>
-        <!-- Footer Ad -->
+        <!-- Footer Ad - Monetag will place ads here automatically -->
         <div class="ad-banner">
-            🌟 GOOGLE ADSENSE - FOOTER BANNER AD (728x90 or responsive)
+            Monetag Ads Will Appear Here Automatically
         </div>
         
-        <p>&copy; 2025 PDFToolsPro. All rights reserved. | Privacy Policy | Terms of Service</p>
+        <div style="margin-bottom: 20px;">
+            <a href="#privacy" onclick="showPrivacyPolicy()" style="color: white; text-decoration: none; margin: 0 15px;">Privacy Policy</a>
+            <a href="#terms" onclick="showTermsOfService()" style="color: white; text-decoration: none; margin: 0 15px;">Terms of Service</a>
+            <a href="#contact" onclick="showContact()" style="color: white; text-decoration: none; margin: 0 15px;">Contact Us</a>
+        </div>
+        
+        <p>&copy; 2025 PDFToolsPro. All rights reserved.</p>
         <p>Free PDF tools for everyone. Secure, fast, and reliable processing.</p>
     </footer>
 
-    <!-- Add PDF-lib library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
-    
     <script>
         let currentTool = '';
         let selectedFiles = [];
@@ -594,35 +607,177 @@
         // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('toolModal');
+            const policyModal = document.getElementById('policyModal');
             if (event.target === modal) {
                 closeModal();
             }
+            if (event.target === policyModal) {
+                closePolicyModal();
+            }
         }
 
-        // Add some interactive features
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animate tool cards on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
+        // Policy pages functions
+        function showPrivacyPolicy() {
+            document.getElementById('policyContent').innerHTML = `
+                <h2>Privacy Policy</h2>
+                <p><strong>Last updated: August 25, 2025</strong></p>
+                
+                <h3>1. Information We Collect</h3>
+                <p>We collect information you provide directly to us, such as when you use our PDF tools:</p>
+                <ul>
+                    <li><strong>Files:</strong> PDF files you upload are processed locally in your browser and automatically deleted after processing</li>
+                    <li><strong>Usage Data:</strong> We may collect information about how you use our website through cookies and similar technologies</li>
+                    <li><strong>Device Information:</strong> We may collect device-specific information such as browser type, operating system, and IP address</li>
+                </ul>
 
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
+                <h3>2. How We Use Your Information</h3>
+                <p>We use the information we collect to:</p>
+                <ul>
+                    <li>Provide, maintain, and improve our PDF processing services</li>
+                    <li>Process your PDF files locally in your browser</li>
+                    <li>Display relevant advertisements through Monetag</li>
+                    <li>Analyze usage patterns to improve user experience</li>
+                </ul>
 
-            document.querySelectorAll('.tool-card').forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
-            });
-        });
-    </script>
-</body>
-</html>
+                <h3>3. File Processing and Security</h3>
+                <p><strong>Important:</strong> All PDF processing happens directly in your browser. We do not upload your files to our servers. Files are processed locally and automatically removed from memory when you close the browser tab.</p>
+
+                <h3>4. Third-Party Services</h3>
+                <p>We use the following third-party services:</p>
+                <ul>
+                    <li><strong>Monetag:</strong> For displaying advertisements. Monetag may use cookies to serve ads based on your visits to our site and other sites on the Internet.</li>
+                    <li><strong>Analytics:</strong> For analyzing website traffic and user behavior (anonymized data only)</li>
+                </ul>
+
+                <h3>5. Cookies and Tracking</h3>
+                <p>We use cookies and similar tracking technologies to:</p>
+                <ul>
+                    <li>Remember your preferences and settings</li>
+                    <li>Analyze site traffic and usage patterns</li>
+                    <li>Serve relevant advertisements through Monetag</li>
+                </ul>
+                <p>You can control cookies through your browser settings, but disabling them may affect site functionality.</p>
+
+                <h3>6. Data Retention</h3>
+                <p>We do not store your uploaded PDF files. All processing is done locally in your browser, and files are automatically removed from memory when processing is complete or when you close the browser.</p>
+
+                <h3>7. Your Rights</h3>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access information we have about you</li>
+                    <li>Correct inaccurate information</li>
+                    <li>Request deletion of your information</li>
+                    <li>Opt out of certain data collection practices</li>
+                </ul>
+
+                <h3>8. Children's Privacy</h3>
+                <p>Our service is not directed to children under 13. We do not knowingly collect personal information from children under 13.</p>
+
+                <h3>9. Changes to This Privacy Policy</h3>
+                <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page.</p>
+
+                <h3>10. Contact Us</h3>
+                <p>If you have any questions about this privacy policy, please contact us at: <strong>privacy@pdftoolspro.com</strong></p>
+            `;
+            document.getElementById('policyModal').style.display = 'block';
+        }
+
+        function showTermsOfService() {
+            document.getElementById('policyContent').innerHTML = `
+                <h2>Terms of Service</h2>
+                <p><strong>Last updated: August 25, 2025</strong></p>
+                
+                <h3>1. Acceptance of Terms</h3>
+                <p>By accessing and using PDFToolsPro, you accept and agree to be bound by the terms and provision of this agreement.</p>
+
+                <h3>2. Description of Service</h3>
+                <p>PDFToolsPro provides free online PDF processing tools including:</p>
+                <ul>
+                    <li>PDF merging and splitting</li>
+                    <li>PDF compression and optimization</li>
+                    <li>PDF conversion tools</li>
+                    <li>PDF security and protection features</li>
+                </ul>
+
+                <h3>3. User Responsibilities</h3>
+                <p>You agree to:</p>
+                <ul>
+                    <li>Use the service only for lawful purposes</li>
+                    <li>Not upload malicious, copyrighted, or illegal content</li>
+                    <li>Not attempt to reverse engineer or hack our services</li>
+                    <li>Respect file size limits and usage guidelines</li>
+                </ul>
+
+                <h3>4. File Processing and Storage</h3>
+                <p><strong>Important:</strong> All file processing occurs locally in your browser. We do not store, access, or retain your files on our servers. Files are automatically removed from browser memory after processing.</p>
+
+                <h3>5. Service Availability</h3>
+                <p>While we strive to maintain 100% uptime, we cannot guarantee uninterrupted service. We reserve the right to modify, suspend, or discontinue any part of our service at any time.</p>
+
+                <h3>6. Intellectual Property</h3>
+                <p>The PDFToolsPro website, design, and functionality are protected by copyright and other intellectual property laws. You may not copy, modify, or distribute our content without permission.</p>
+
+                <h3>7. Disclaimer of Warranties</h3>
+                <p>Our service is provided "as is" without warranties of any kind. We do not guarantee:</p>
+                <ul>
+                    <li>Perfect processing of all PDF files</li>
+                    <li>Compatibility with all file formats</li>
+                    <li>Uninterrupted service availability</li>
+                </ul>
+
+                <h3>8. Limitation of Liability</h3>
+                <p>PDFToolsPro shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our service.</p>
+
+                <h3>9. File Size and Usage Limits</h3>
+                <ul>
+                    <li>Maximum file size: 50MB per file</li>
+                    <li>Processing is limited by your device's browser capabilities</li>
+                    <li>No limits on number of files processed</li>
+                </ul>
+
+                <h3>10. Prohibited Uses</h3>
+                <p>You may not use our service to:</p>
+                <ul>
+                    <li>Process illegal, harmful, or copyrighted content</li>
+                    <li>Attempt to overwhelm our servers</li>
+                    <li>Reverse engineer our tools</li>
+                    <li>Redistribute our service without permission</li>
+                </ul>
+
+                <h3>11. Changes to Terms</h3>
+                <p>We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting.</p>
+
+                <h3>12. Governing Law</h3>
+                <p>These terms are governed by and construed in accordance with applicable laws.</p>
+
+                <h3>13. Contact Information</h3>
+                <p>For questions about these terms, contact us at: <strong>legal@pdftoolspro.com</strong></p>
+            `;
+            document.getElementById('policyModal').style.display = 'block';
+        }
+
+        function showContact() {
+            document.getElementById('policyContent').innerHTML = `
+                <h2>Contact Us</h2>
+                
+                <h3>Get in Touch</h3>
+                <p>We'd love to hear from you! Whether you have questions, feedback, or need support, we're here to help.</p>
+
+                <h3>Contact Information</h3>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <p><strong>📧 General Inquiries:</strong> info@pdftoolspro.com</p>
+                    <p><strong>🔒 Privacy Questions:</strong> privacy@pdftoolspro.com</p>
+                    <p><strong>⚖️ Legal Matters:</strong> legal@pdftoolspro.com</p>
+                    <p><strong>🛠️ Technical Support:</strong> support@pdftoolspro.com</p>
+                </div>
+
+                <h3>Frequently Asked Questions</h3>
+                <div style="text-align: left;">
+                    <p><strong>Q: Are my files stored on your servers?</strong></p>
+                    <p>A: No! All processing happens locally in your browser. We never see or store your files.</p>
+                    
+                    <p><strong>Q: What's the maximum file size?</strong></p>
+                    <p>A: Currently 50MB per file, limited by your browser's capabilities.</p>
+                    
+                    <p><strong>Q: Is the service really free?</strong></p>
+                    <p>A
