@@ -367,6 +367,14 @@
         </div>
     </div>
 
+    <!-- Policy Modal -->
+    <div id="policyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePolicyModal()">&times;</span>
+            <div id="policyContent"></div>
+        </div>
+    </div>
+
     <!-- Tool Modal -->
     <div id="toolModal" class="modal">
         <div class="modal-content">
@@ -594,9 +602,196 @@
         // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('toolModal');
+            const policyModal = document.getElementById('policyModal');
             if (event.target === modal) {
                 closeModal();
             }
+            if (event.target === policyModal) {
+                closePolicyModal();
+            }
+        }
+
+        // Policy pages functions
+        function showPrivacyPolicy() {
+            document.getElementById('policyContent').innerHTML = `
+                <h2>Privacy Policy</h2>
+                <p><strong>Last updated: August 25, 2025</strong></p>
+                
+                <h3>1. Information We Collect</h3>
+                <p>We collect information you provide directly to us, such as when you use our PDF tools:</p>
+                <ul>
+                    <li><strong>Files:</strong> PDF files you upload are processed locally in your browser and automatically deleted after processing</li>
+                    <li><strong>Usage Data:</strong> We may collect information about how you use our website through cookies and similar technologies</li>
+                    <li><strong>Device Information:</strong> We may collect device-specific information such as browser type, operating system, and IP address</li>
+                </ul>
+
+                <h3>2. How We Use Your Information</h3>
+                <p>We use the information we collect to:</p>
+                <ul>
+                    <li>Provide, maintain, and improve our PDF processing services</li>
+                    <li>Process your PDF files locally in your browser</li>
+                    <li>Display relevant advertisements through Google AdSense</li>
+                    <li>Analyze usage patterns to improve user experience</li>
+                </ul>
+
+                <h3>3. File Processing and Security</h3>
+                <p><strong>Important:</strong> All PDF processing happens directly in your browser. We do not upload your files to our servers. Files are processed locally and automatically removed from memory when you close the browser tab.</p>
+
+                <h3>4. Third-Party Services</h3>
+                <p>We use the following third-party services:</p>
+                <ul>
+                    <li><strong>Google AdSense:</strong> For displaying advertisements. Google may use cookies to serve ads based on your visits to our site and other sites on the Internet.</li>
+                    <li><strong>Google Analytics:</strong> For analyzing website traffic and user behavior (anonymized data only)</li>
+                </ul>
+
+                <h3>5. Cookies and Tracking</h3>
+                <p>We use cookies and similar tracking technologies to:</p>
+                <ul>
+                    <li>Remember your preferences and settings</li>
+                    <li>Analyze site traffic and usage patterns</li>
+                    <li>Serve relevant advertisements through Google AdSense</li>
+                </ul>
+                <p>You can control cookies through your browser settings, but disabling them may affect site functionality.</p>
+
+                <h3>6. Data Retention</h3>
+                <p>We do not store your uploaded PDF files. All processing is done locally in your browser, and files are automatically removed from memory when processing is complete or when you close the browser.</p>
+
+                <h3>7. Your Rights</h3>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access information we have about you</li>
+                    <li>Correct inaccurate information</li>
+                    <li>Request deletion of your information</li>
+                    <li>Opt out of certain data collection practices</li>
+                </ul>
+
+                <h3>8. Children's Privacy</h3>
+                <p>Our service is not directed to children under 13. We do not knowingly collect personal information from children under 13.</p>
+
+                <h3>9. Changes to This Privacy Policy</h3>
+                <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page.</p>
+
+                <h3>10. Contact Us</h3>
+                <p>If you have any questions about this privacy policy, please contact us at: <strong>privacy@pdftoolspro.com</strong></p>
+            `;
+            document.getElementById('policyModal').style.display = 'block';
+        }
+
+        function showTermsOfService() {
+            document.getElementById('policyContent').innerHTML = `
+                <h2>Terms of Service</h2>
+                <p><strong>Last updated: August 25, 2025</strong></p>
+                
+                <h3>1. Acceptance of Terms</h3>
+                <p>By accessing and using PDFToolsPro, you accept and agree to be bound by the terms and provision of this agreement.</p>
+
+                <h3>2. Description of Service</h3>
+                <p>PDFToolsPro provides free online PDF processing tools including:</p>
+                <ul>
+                    <li>PDF merging and splitting</li>
+                    <li>PDF compression and optimization</li>
+                    <li>PDF conversion tools</li>
+                    <li>PDF security and protection features</li>
+                </ul>
+
+                <h3>3. User Responsibilities</h3>
+                <p>You agree to:</p>
+                <ul>
+                    <li>Use the service only for lawful purposes</li>
+                    <li>Not upload malicious, copyrighted, or illegal content</li>
+                    <li>Not attempt to reverse engineer or hack our services</li>
+                    <li>Respect file size limits and usage guidelines</li>
+                </ul>
+
+                <h3>4. File Processing and Storage</h3>
+                <p><strong>Important:</strong> All file processing occurs locally in your browser. We do not store, access, or retain your files on our servers. Files are automatically removed from browser memory after processing.</p>
+
+                <h3>5. Service Availability</h3>
+                <p>While we strive to maintain 100% uptime, we cannot guarantee uninterrupted service. We reserve the right to modify, suspend, or discontinue any part of our service at any time.</p>
+
+                <h3>6. Intellectual Property</h3>
+                <p>The PDFToolsPro website, design, and functionality are protected by copyright and other intellectual property laws. You may not copy, modify, or distribute our content without permission.</p>
+
+                <h3>7. Disclaimer of Warranties</h3>
+                <p>Our service is provided "as is" without warranties of any kind. We do not guarantee:</p>
+                <ul>
+                    <li>Perfect processing of all PDF files</li>
+                    <li>Compatibility with all file formats</li>
+                    <li>Uninterrupted service availability</li>
+                </ul>
+
+                <h3>8. Limitation of Liability</h3>
+                <p>PDFToolsPro shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our service.</p>
+
+                <h3>9. File Size and Usage Limits</h3>
+                <ul>
+                    <li>Maximum file size: 50MB per file</li>
+                    <li>Processing is limited by your device's browser capabilities</li>
+                    <li>No limits on number of files processed</li>
+                </ul>
+
+                <h3>10. Prohibited Uses</h3>
+                <p>You may not use our service to:</p>
+                <ul>
+                    <li>Process illegal, harmful, or copyrighted content</li>
+                    <li>Attempt to overwhelm our servers</li>
+                    <li>Reverse engineer our tools</li>
+                    <li>Redistribute our service without permission</li>
+                </ul>
+
+                <h3>11. Changes to Terms</h3>
+                <p>We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting.</p>
+
+                <h3>12. Governing Law</h3>
+                <p>These terms are governed by and construed in accordance with applicable laws.</p>
+
+                <h3>13. Contact Information</h3>
+                <p>For questions about these terms, contact us at: <strong>legal@pdftoolspro.com</strong></p>
+            `;
+            document.getElementById('policyModal').style.display = 'block';
+        }
+
+        function showContact() {
+            document.getElementById('policyContent').innerHTML = `
+                <h2>Contact Us</h2>
+                
+                <h3>Get in Touch</h3>
+                <p>We'd love to hear from you! Whether you have questions, feedback, or need support, we're here to help.</p>
+
+                <h3>Contact Information</h3>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <p><strong>📧 General Inquiries:</strong> info@pdftoolspro.com</p>
+                    <p><strong>🔒 Privacy Questions:</strong> privacy@pdftoolspro.com</p>
+                    <p><strong>⚖️ Legal Matters:</strong> legal@pdftoolspro.com</p>
+                    <p><strong>🛠️ Technical Support:</strong> support@pdftoolspro.com</p>
+                </div>
+
+                <h3>Frequently Asked Questions</h3>
+                <div style="text-align: left;">
+                    <p><strong>Q: Are my files stored on your servers?</strong></p>
+                    <p>A: No! All processing happens locally in your browser. We never see or store your files.</p>
+                    
+                    <p><strong>Q: What's the maximum file size?</strong></p>
+                    <p>A: Currently 50MB per file, limited by your browser's capabilities.</p>
+                    
+                    <p><strong>Q: Is the service really free?</strong></p>
+                    <p>A: Yes! We're supported by ads to keep the service completely free for everyone.</p>
+                    
+                    <p><strong>Q: Do you support mobile devices?</strong></p>
+                    <p>A: Absolutely! Our tools work on all devices with a modern browser.</p>
+                </div>
+
+                <h3>Business Hours</h3>
+                <p>We typically respond to emails within 24-48 hours, Monday through Friday.</p>
+
+                <h3>Feature Requests</h3>
+                <p>Have an idea for a new PDF tool? Send us your suggestions at <strong>features@pdftoolspro.com</strong></p>
+            `;
+            document.getElementById('policyModal').style.display = 'block';
+        }
+
+        function closePolicyModal() {
+            document.getElementById('policyModal').style.display = 'none';
         }
 
         // Add some interactive features
