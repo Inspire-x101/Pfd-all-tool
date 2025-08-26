@@ -1,9 +1,22 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDFToolsPro - Free PDF Tools Online</title>
+    
+    <!-- Google AdSense Verification -->
+    <meta name="google-adsense-account" content="ca-pub-5711268550793911">
+    
+    <!-- Google AdSense Auto Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5711268550793911" crossorigin="anonymous"></script>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5711268550793911",
+        enable_page_level_ads: true
+    });
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -52,6 +65,10 @@
             border-radius: 8px;
             color: #6c757d;
             font-weight: bold;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .ad-sidebar {
@@ -270,18 +287,12 @@
             <div class="tagline">Complete PDF Solutions - Free & Fast</div>
         </header>
 
-        <!-- Top Banner Ad -->
+        <!-- Auto Ads will place ads here automatically -->
         <div class="ad-banner">
-            <!-- Replace this entire div with your Google AdSense code -->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXXXX"
-                 data-ad-slot="XXXXXXXXXX"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            <!-- End AdSense code -->
+            <!-- Google Auto Ads will automatically place ads in optimal locations -->
+            <div style="text-align: center; color: #999; padding: 20px;">
+                🎯 Google Auto Ads Active - Ads Will Appear Here Automatically
+            </div>
         </div>
 
         <div class="main-content">
@@ -330,9 +341,11 @@
                     </div>
                 </div>
 
-                <!-- Middle Banner Ad -->
+                <!-- Auto Ads will place ads here automatically -->
                 <div class="ad-banner">
-                    💰 GOOGLE ADSENSE - MIDDLE BANNER AD (728x90 or responsive)
+                    <div style="text-align: center; color: #999; padding: 20px;">
+                        💰 Google Auto Ads Active - Premium Ad Placement
+                    </div>
                 </div>
             </div>
 
@@ -346,9 +359,11 @@
                     <li onclick="openTool('protect')">🛡️ Password Protect</li>
                 </ul>
 
-                <!-- Sidebar Ad 1 -->
+                <!-- Auto Ads will place sidebar ads automatically -->
                 <div class="ad-sidebar">
-                    📱 GOOGLE ADSENSE<br>SIDEBAR AD<br>(300x250)
+                    <div style="text-align: center; color: #999;">
+                        📱 Google Auto Ads<br>Sidebar Placement<br>Active
+                    </div>
                 </div>
 
                 <h3>Quick Tips</h3>
@@ -359,9 +374,11 @@
                     <li>🔄 Batch processing available</li>
                 </ul>
 
-                <!-- Sidebar Ad 2 -->
+                <!-- Auto Ads will place sidebar ads automatically -->
                 <div class="ad-sidebar">
-                    🎯 GOOGLE ADSENSE<br>SIDEBAR AD<br>(300x600)
+                    <div style="text-align: center; color: #999;">
+                        🎯 Google Auto Ads<br>Secondary Sidebar<br>Placement Active
+                    </div>
                 </div>
             </div>
         </div>
@@ -381,9 +398,11 @@
             <span class="close" onclick="closeModal()">&times;</span>
             <h2 id="modalTitle">PDF Tool</h2>
             
-            <!-- Ad in Modal -->
+            <!-- Auto Ads will place modal ads automatically -->
             <div class="ad-banner" style="margin: 20px 0;">
-                💎 GOOGLE ADSENSE - IN-MODAL AD (responsive)
+                <div style="text-align: center; color: #999; padding: 15px;">
+                    💎 Google Auto Ads - Modal Placement Active
+                </div>
             </div>
             
             <input type="file" id="fileInput" class="file-input" multiple accept=".pdf">
@@ -406,20 +425,30 @@
                 </button>
             </div>
             
-            <!-- Another ad after processing area -->
+            <!-- Auto Ads will place ads after processing -->
             <div class="ad-banner" style="margin-top: 30px;">
-                🏆 GOOGLE ADSENSE - BOTTOM MODAL AD (responsive)
+                <div style="text-align: center; color: #999; padding: 15px;">
+                    🏆 Google Auto Ads - Post-Processing Placement
+                </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <!-- Footer Ad -->
+        <!-- Auto Ads will place footer ads automatically -->
         <div class="ad-banner">
-            🌟 GOOGLE ADSENSE - FOOTER BANNER AD (728x90 or responsive)
+            <div style="text-align: center; color: #999; padding: 20px;">
+                🌟 Google Auto Ads - Footer Placement Active
+            </div>
         </div>
         
-        <p>&copy; 2025 PDFToolsPro. All rights reserved. | Privacy Policy | Terms of Service</p>
+        <div style="margin-bottom: 20px;">
+            <a href="#privacy" onclick="showPrivacyPolicy()" style="color: white; text-decoration: none; margin: 0 15px;">Privacy Policy</a>
+            <a href="#terms" onclick="showTermsOfService()" style="color: white; text-decoration: none; margin: 0 15px;">Terms of Service</a>
+            <a href="#contact" onclick="showContact()" style="color: white; text-decoration: none; margin: 0 15px;">Contact Us</a>
+        </div>
+        
+        <p>&copy; 2025 PDFToolsPro. All rights reserved.</p>
         <p>Free PDF tools for everyone. Secure, fast, and reliable processing.</p>
     </footer>
 
@@ -753,8 +782,6 @@
 
         function showContact() {
             document.getElementById('policyContent').innerHTML = `
-                <h2>Contact Us</h2>
-                
                 <h3>Get in Touch</h3>
                 <p>We'd love to hear from you! Whether you have questions, feedback, or need support, we're here to help.</p>
 
